@@ -2,4 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap'); */
+@layer base {
+    :root {
+     @apply bg-default-img bg-center bg-cover bg-no-repeat overscroll-none;
+    }
+   }

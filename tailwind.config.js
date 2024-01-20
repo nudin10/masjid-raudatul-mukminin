@@ -6,8 +6,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      margin: {
+        "main-x": "margin-left: 10px; margin-right: 10px;" 
+      },
       backgroundImage: {
-        "default-img": "url('./src/assets/default-wp.jpg')"
+        "default-img": "url('./src/assets/images/default-wp.jpg')"
       },
       fontFamily: {
         "default": ["Montserrat", "sans-serif"]

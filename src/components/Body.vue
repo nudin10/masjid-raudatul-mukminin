@@ -1,11 +1,13 @@
 <template>
-    <body class="mx-14">
-        <div class="hidden md:flex justify-center w-full">
-            <img src="../assets/nav-text.png" class="h-20 m-3">
+    <body class="mx-6 md:mx-14 mt-5 ">
+        <div class="mt-12">
+            <Segment :segmentName="'Acara'"/>
+            <EventCard/>
         </div>
-        <div class="mt-14 md:mt-0 h-80 p-5">
-            <img src="../assets/setiausaha.jpg" alt="Bendahari Masjid" class="h-5/6">
-        </div>
-       
     </body>
 </template>
+
+<script setup>
+import EventCard from '@/components/eventCard/EventCard.vue';
+import Segment from '@/components/Segment.vue';
+</script>
