@@ -4,6 +4,8 @@
 
 @layer base {
     :root {
-     @apply bg-default-img bg-center bg-cover bg-no-repeat overscroll-none;
+     /* @apply bg-default-img bg-center bg-cover bg-no-repeat overscroll-none; */
+     /* @apply bg-[#1F2544] overscroll-none */
+     @apply bg-[#FFFBF5] overscroll-none
     }
    }

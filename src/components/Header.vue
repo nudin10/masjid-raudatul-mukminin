@@ -1,6 +1,6 @@
 <template>
-    <header class="mt-5 sm:mx-2 lg:mx-5">
-        <Nav />
+    <header class="fixed top-0 left-0 w-full py-6 px-12 backdrop-blur-sm">
+        <Nav/>
     </header>
 </template>
 

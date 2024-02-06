@@ -6,11 +6,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors:{
+        "white-translucent": "rgba(255, 255, 255, 0.6)"
+      },
       margin: {
         "main-x": "margin-left: 10px; margin-right: 10px;" 
       },
       backgroundImage: {
-        "default-img": "url('./src/assets/images/default-wp.jpg')"
+        "default-img": "url('./src/assets/images/masjid-pagi.jpg')"
       },
       fontFamily: {
         "default": ["Montserrat", "sans-serif"]
