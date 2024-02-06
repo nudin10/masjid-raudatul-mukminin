@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      height: {
+        "header-h": "'h-20'"
+      },
       colors:{
         "white-translucent": "rgba(255, 255, 255, 0.6)"
       },

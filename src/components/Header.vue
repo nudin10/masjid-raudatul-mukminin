@@ -1,5 +1,5 @@
 <template>
-    <header class="fixed top-0 left-0 w-full py-6 px-12 backdrop-blur-sm">
+    <header class="fixed top-0 left-0 w-full h-20 px-12 backdrop-blur-sm shadow-sm">
         <Nav/>
     </header>
 </template>
