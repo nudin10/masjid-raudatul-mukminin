@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-import Nav from '@/components/nav.vue';
+import Nav from '@/components/Nav.vue';
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 
 let lastScrollY = ref(window.scrollY);
