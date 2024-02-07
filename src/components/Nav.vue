@@ -1,7 +1,8 @@
 <template>
   <nav class="flex justify-between items-center font-semibold w-full h-full">
-    <div class="relative flex max-h-full max-w-full"> 
-      <img src="../assets/images/nav-logo.png" class="h-10 invert object-cover md:border-r-2 border-double border-black py-1 pl-1.5 pr-2" alt="">
+    <div class="relative flex max-h-full max-w-full">
+      <img src="../assets/images/nav-logo.png"
+        class="h-10 invert object-cover md:border-r-2 border-double border-black py-1 pl-1.5 pr-2" alt="">
       <img src="../assets/images/nav-text.png" class="hidden md:inline ml-2 h-10">
     </div>
     <!-- <img src="../assets/images/nav-text.png" class="max-h-full inline"> -->
@@ -10,7 +11,8 @@
         <!-- <router-link v-for="(route, index) in routes" to="{{ route.path }}"
           class="cursor-pointer px-3 hover:animate-text-glow">{{
             route.name }}</router-link> -->
-        <a v-for="(route, index) in routes" :key="index" href="{{ key }}" class="cursor-pointer px-3 hover:animate-text-glow">{{ route.name }}</a>
+        <a v-for="(route, index) in routes" :key="index" href="{{ key }}"
+          class="cursor-pointer px-3 hover:animate-text-glow">{{ route.name }}</a>
       </ul>
     </div>
     <div class="md:hidden">
@@ -32,24 +34,13 @@
   </nav>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      routes: [
-        { path: "#pengenalan", name: "Pengenalan" },
-        { path: "/", name: "Acara" },
-        { path: "/", name: "Kepimpinan" },
-        { path: "/", name: "Sumbangan" }
-      ]
-    };
-  },
-  setup() {
-    function showNav() {
-    }
-  },
-  // components: { Fb, Whatsapp }
-}
+<script setup>
+let routes = [
+  { path: "#pengenalan", name: "Pengenalan" },
+  { path: "/", name: "Acara" },
+  { path: "/", name: "Kepimpinan" },
+  { path: "/", name: "Sumbangan" }
+];
 </script>
 
 <style scoped>

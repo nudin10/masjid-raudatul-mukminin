@@ -9,6 +9,9 @@ module.exports = {
       height: {
         "header-h": "'h-20'"
       },
+      padding: {
+        "header-p": "pt-20"
+      },
       colors:{
         "white-translucent": "rgba(255, 255, 255, 0.6)"
       },
