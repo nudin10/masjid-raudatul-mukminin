@@ -11,7 +11,7 @@
         <!-- <router-link v-for="(route, index) in routes" to="{{ route.path }}"
           class="cursor-pointer px-3 hover:animate-text-glow">{{
             route.name }}</router-link> -->
-        <a v-for="(route, index) in routes" :key="index" href="{{ key }}"
+        <a v-for="(route, index) in routes" :key="index" href="{{ route.path }}"
           class="cursor-pointer px-3 hover:animate-text-glow">{{ route.name }}</a>
       </ul>
     </div>

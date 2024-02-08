@@ -9,9 +9,6 @@
 </template>
 
 <script setup>
-
 import Location from '@/components/Location.vue';
 import Description from '@/components/Description.vue';
-import Test from '@/components/Test.vue'
-import Segment from './Segment.vue';
 </script>

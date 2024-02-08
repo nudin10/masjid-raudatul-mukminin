@@ -1,5 +1,5 @@
 <template>
-    <header @scroll="scrollHandler()" id="nav" :class="{ 'nav-show': hideNav, 'nav-hidden': !hideNav }"
+    <header :class="{ 'nav-show': !hideNav, 'nav-hidden': hideNav }"
         class="fixed top-0 left-0 w-full h-20 px-12 backdrop-blur-sm shadow-sm">
         <Nav />
     </header>
@@ -10,16 +10,14 @@ import Nav from '@/components/Nav.vue';
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 
 let lastScrollY = ref(window.scrollY);
-let hideNav = true;
+let hideNav = ref(true);
 
 const scrollHandler = () => {
     if (lastScrollY.value < window.scrollY) {
-        hideNav = false
-        console.log(hideNav)
+        hideNav.value = false
 
     } else {
-        hideNav = true
-        console.log(hideNav)
+        hideNav.value = true
     }
     lastScrollY.value = window.scrollY;
 }
@@ -36,6 +34,10 @@ onBeforeUnmount(() => {
 <style scoped>
 :root {
     --nav-h: 5rem;
+}
+
+header {
+    transition: transform 0.2s;
 }
 
 .nav-hidden {
