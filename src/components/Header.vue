@@ -1,5 +1,5 @@
 <template>
-    <header :class="{ 'nav-show': !hideNav, 'nav-hidden': hideNav }"
+    <header :class="{ 'nav-show': !hideNav, 'nav-hidden': hideNav }" ref="targetObserve"
         class="fixed top-0 left-0 w-full h-20 px-12 backdrop-blur-sm shadow-sm">
         <Nav />
     </header>
@@ -10,20 +10,33 @@ import Nav from '@/components/Nav.vue';
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 
 let lastScrollY = ref(window.scrollY);
-let hideNav = ref(true);
+let hideNav = ref(false);
 
 const scrollHandler = () => {
     if (lastScrollY.value < window.scrollY) {
-        hideNav.value = false
+        setTimeout(() => {
+            hideNav.value = true;
+        }, 100); 
+        hideNav.value = true
 
     } else {
-        hideNav.value = true
+        hideNav.value = false
     }
     lastScrollY.value = window.scrollY;
 }
 
 onMounted(() => {
-    window.addEventListener('scroll', scrollHandler);
+    // let options = {};
+    // const targetObserve = ref(null);
+
+    // const observer = new IntersectionObserver((entries, observer) => {
+    //     entries.forEach(entry => {
+    //         console.log("Observed " + entry)
+    //     })
+    // }, options);
+
+    // observer.observe(targetObserve.value);
+    // window.addEventListener('scroll', scrollHandler);
 })
 
 onBeforeUnmount(() => {
@@ -48,4 +61,9 @@ header {
 .nav-show {
     transform: translateY(calc(1*var(--nav-h)));
 }
+
+/* .nav-scrolled {
+
+} */
+
 </style>

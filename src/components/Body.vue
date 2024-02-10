@@ -1,15 +1,11 @@
 <template>
-    <body class="mx-6 md:mx-14 pt-10 ">
-        <Description/>
-        <div class="mt-12">
-            <Segment :segmentName="'Acara'"/>
-            <EventCard/>
-        </div>
-    </body>
+    <SectionOne/>
+    <SectionTwo/>
+    <SectionThree/>
 </template>
 
 <script setup>
-import EventCard from '@/components/eventCard/EventCard.vue';
-import Segment from '@/components/Segment.vue';
-import Description from '@/components/Description.vue';
+import SectionOne from "@/components/SectionOne.vue"
+import SectionTwo from "@/components/SectionTwo.vue"
+import SectionThree from "@/components/SectionThree.vue"
 </script>

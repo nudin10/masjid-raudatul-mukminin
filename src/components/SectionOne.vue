@@ -1,5 +1,6 @@
 <template>
     <div
+        id="pengenalan"
         class="bg-default-img bg-cover bg-center min-h-screen min-w-full max-h-screen-xl max-w-screen-xl font-default text-black pt-20 px-14">
         <div class="mt-10 w-1/3 h-[40em] flex flex-row align-middle">
             <div class="h-full w-full bg-white-translucent rounded-xl">
@@ -9,7 +10,6 @@
                     </div>
                     <div
                         class="flex flex-col items-center py-6 text-center text-3xl text-black font-arabic border-y-2  border-slate-700">
-                        <!-- <p class="">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p> -->
                         <p>"</p>
                         <p>{{ ayatData.text.arabic }}</p>
                         <p>"</p>
@@ -18,7 +18,6 @@
                     <p class="flex flex-col items-center pt-4 font-default">
                         {{ ayatData.metadata.surahNameEng }} - {{ ayatData.metadata.number }}
                     </p>
-                    <!-- <img src="../assets/images/kaligrafi-black.png" class="h-full" alt=""> -->
                 </div>
             </div>
         </div>
@@ -44,13 +43,13 @@ let ayatData = ref({
 
 onMounted(
     async () => {
-        fetchRetry(arabic, 5, 5).then(res => res.json()).then(data => {
+        fetchRetry(arabic, 500, 5).then(res => res.json()).then(data => {
             ayatData.value.text.arabic = data.data.text
             ayatData.value.metadata.surahName = data.data.surah.name
             ayatData.value.metadata.surahNameEng = data.data.surah.englishName
             ayatData.value.metadata.number = data.data.numberInSurah
         })
-        fetchRetry(english, 5, 5).then(res => res.json()).then(data => ayatData.value.text.english = data.data.text)
+        fetchRetry(english, 500, 5).then(res => res.json()).then(data => ayatData.value.text.english = data.data.text)
     }
 );
 
