@@ -22,7 +22,8 @@ module.exports = {
         "default-img": "url('/src/assets/images/masjid-pagi.jpg')"
       },
       fontFamily: {
-        "default": ["Montserrat", "sans-serif"]
+        "default": ["Montserrat", "sans-serif"],
+        "arabic": ["Amiri", "serif"],
       },
       keyframes: {
         "text-glow": {
