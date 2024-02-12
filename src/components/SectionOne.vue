@@ -48,16 +48,19 @@ onMounted(
                 ayatData.value.metadata.surahName = data.data.surah.name
                 ayatData.value.metadata.surahNameEng = data.data.surah.englishName
                 ayatData.value.metadata.number = data.data.numberInSurah
+            }).catch(err => {
+                console.log("Failed to get API response: " + err)
+                ayatData.value.text.arabic = "إِنَّمَا یَعۡمُرُ مَسَـٰجِدَ ٱللَّهِ مَنۡ ءَامَنَ بِٱللَّهِ وَٱلۡیَوۡمِ ٱلۡـَٔاخِرِ وَأَقَامَ ٱلصَّلَوٰةَ وَءَاتَى ٱلزَّكَوٰةَ وَلَمۡ یَخۡشَ إِلَّا ٱللَّهَۖ فَعَسَىٰۤ أُو۟لَـٰۤىِٕكَ أَن یَكُونُوا۟ مِنَ ٱلۡمُهۡتَدِینَ"
+                ayatData.value.metadata.surahName = "At-Tawba"
+                ayatData.value.metadata.surahNameEng = ""
+                ayatData.value.metadata.number = "18"
             })
-            fetchRetry(english, 500, 5).then(res => res.json()).then(data => ayatData.value.text.english = data.data.text)
-        } catch (error) {
-            console.log("Failed to get API response: "+err)
-        ayatData.value.text.arabic = "إِنَّمَا یَعۡمُرُ مَسَـٰجِدَ ٱللَّهِ مَنۡ ءَامَنَ بِٱللَّهِ وَٱلۡیَوۡمِ ٱلۡـَٔاخِرِ وَأَقَامَ ٱلصَّلَوٰةَ وَءَاتَى ٱلزَّكَوٰةَ وَلَمۡ یَخۡشَ إِلَّا ٱللَّهَۖ فَعَسَىٰۤ أُو۟لَـٰۤىِٕكَ أَن یَكُونُوا۟ مِنَ ٱلۡمُهۡتَدِینَ"
-        ayatData.value.text.english = "Only he should visit or tend God's houses of worship who believes in God and the Last Day, and is constant in prayer, and spends in charity, and stands in awe of none but God: for [only such as] these may hope to be among the right-guided!"
-        ayatData.value.metadata.surahName = "At-Tawba"
-        ayatData.value.metadata.surahNameEng = ""
-        ayatData.value.metadata.number = "18"
-
+            fetchRetry(english, 500, 5).then(res => res.json()).then(data => ayatData.value.text.english = data.data.text).catch(err => {
+                console.log("Failed to get API response: " + err)
+                ayatData.value.text.english = "Only he should visit or tend God's houses of worship who believes in God and the Last Day, and is constant in prayer, and spends in charity, and stands in awe of none but God: for [only such as] these may hope to be among the right-guided!"
+            })
+        } catch (err) {
+            console.log("Failed to resolve API and fallback: " + err)
         }
     }
 );
