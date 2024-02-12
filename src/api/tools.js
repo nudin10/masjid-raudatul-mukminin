@@ -4,7 +4,7 @@ function wait(delay) {
 
 function fetchRetry (url, delay, tries, fetchOptions={}, fallback) {
     function onError(err) {
-        triesLeft = tries -1
+        var triesLeft = tries -1
         if(!triesLeft){
             throw new Error("out of tries");
         }
