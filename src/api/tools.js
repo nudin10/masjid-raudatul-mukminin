@@ -2,7 +2,7 @@ function wait(delay) {
     return new Promise((resolve) => {setTimeout(resolve, delay)});
 }
 
-function fetchRetry (url, delay, tries, fetchOptions={}) {
+function fetchRetry (url, delay, tries, fetchOptions={}, fallback) {
     function onError(err) {
         triesLeft = tries -1
         if(!triesLeft){

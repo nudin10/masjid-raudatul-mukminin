@@ -36,7 +36,7 @@ onMounted(() => {
     // }, options);
 
     // observer.observe(targetObserve.value);
-    // window.addEventListener('scroll', scrollHandler);
+    window.addEventListener('scroll', scrollHandler);
 })
 
 onBeforeUnmount(() => {
