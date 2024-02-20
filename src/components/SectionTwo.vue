@@ -1,7 +1,10 @@
 <template>
     <div class="h-screen py-10 bg-slate-800 flex flex-row justify-center content-center">
         <div class="flex flex-row h-full content-center py-8">
-            <ImageSlider class="basis-3/5 pl-12 h-full" />
+            <!-- <ImageSlider class="basis-3/5 pl-12 h-full" /> -->
+            <div class="basis-3/5 h-full ml-12 flex flex-col justify-center">
+                <ImageSlider2/>
+            </div>
             <div class="basis-2/5 border-l-2 border-b-white ml-12 py-24 text-slate-200 flex flex-col items-center justify-center">
                 <div class="flex flex-col items-center content-center">
                     <img src="../assets/images/logo-panjang.png" class="invert h-32" alt="">
@@ -25,5 +28,6 @@
 
 <script setup>
 import ImageSlider from '@/components/ImageSlider.vue';
+import ImageSlider2 from './ImageSlider2.vue';
 import calligraphy from '@/assets/images/kaligrafi-white.png'
 </script>
