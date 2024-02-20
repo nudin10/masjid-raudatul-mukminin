@@ -2,7 +2,9 @@
 module.exports = {
   content: [
     "./src/App.vue",
-    "./src/components/*.vue"
+    "./src/components/*.vue",
+    "node_modules/flowbite-vue/**/*.{js,jsx,ts,tsx,vue}",
+    "node_modules/flowbite/**/*.{js,jsx,ts,tsx}"
   ],
   theme: {
     extend: {
@@ -42,6 +44,7 @@ module.exports = {
   },
   plugins: [
     require("@tailwindcss/typography"),
+    require("flowbite/plugin"),
   ],
 }
 

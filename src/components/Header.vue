@@ -7,40 +7,50 @@
 
 <script setup>
 import Nav from '@/components/Nav.vue';
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, onMounted, onBeforeUnmount, inject } from 'vue';
 
 let lastScrollY = ref(window.scrollY);
 let hideNav = ref(false);
+const sectionThree = ref();
 
-const scrollHandler = () => {
-    if (lastScrollY.value < window.scrollY) {
-        setTimeout(() => {
-            hideNav.value = true;
-        }, 100); 
-        hideNav.value = true
+// defineExpose({ targetObserve })
 
-    } else {
-        hideNav.value = false
-    }
-    lastScrollY.value = window.scrollY;
-}
+// const scrollHandler = () => {
+//     if (lastScrollY.value < window.scrollY) {
+//         setTimeout(() => {
+//             hideNav.value = true;
+//         }, 100);
+//         hideNav.value = true
+
+//     } else {
+//         hideNav.value = false
+//     }
+//     lastScrollY.value = window.scrollY;
+// }
 
 onMounted(() => {
-    // let options = {};
-    // const targetObserve = ref(null);
-
+    // const options = {
+    //     root: null,
+    //     threshold: 1
+    // };
     // const observer = new IntersectionObserver((entries, observer) => {
     //     entries.forEach(entry => {
     //         console.log("Observed " + entry)
+    //         // entry.isIntersecting
     //     })
     // }, options);
 
-    // observer.observe(targetObserve.value);
-    window.addEventListener('scroll', scrollHandler);
+    // if (sectionThree.value instanceof Element) {
+    //     observer.observe(sectionThree.value);
+    // } else {
+    //     console.dir("Observing: " + sectionThree)
+    //     console.error('failed to observe element');
+    // }
+    // window.addEventListener('scroll', scrollHandler);
 })
 
 onBeforeUnmount(() => {
-    window.removeEventListener('scroll', scrollHandler);
+    // window.removeEventListener('scroll', scrollHandler);
 });
 </script>
 
@@ -65,5 +75,4 @@ header {
 /* .nav-scrolled {
 
 } */
-
 </style>
