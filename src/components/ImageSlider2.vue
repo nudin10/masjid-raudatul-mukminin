@@ -16,14 +16,16 @@ import img1 from '../assets/images/img-1.jpg'
 import img2 from '../assets/images/img-2.jpg'
 import img3 from '../assets/images/img-3.jpg'
 import img4 from '../assets/images/img-4.jpg'
+import imgJemaah from '../assets/images/jemaah.jpg'
+import imgPagi from '../assets/images/masjid-pagi.jpg'
 import { onMounted, ref } from 'vue'
 
 const tick = 3000
 
 const pictures = [
-  { src: 'src/assets/images/jemaah.jpg', alt: 'Image 1' },
+  { src: imgJemaah, alt: 'Image 1' },
   { src: img1, alt: 'Image 2' },
-  { src: 'src/assets/images/masjid-pagi.jpg', alt: 'Image 3' },
+  { src: imgPagi, alt: 'Image 3' },
   { src: img2, alt: 'Image 4' },
   { src: img3, alt: 'Image 5' },
   { src: img4, alt: 'Image 6' },
@@ -67,6 +69,8 @@ onMounted(() => {
     }
     caption.value = captions[currentIdx.value].jawi
     captionRumi.value = captions[currentIdx.value].rumi
+
+    console.log()
   }, tick)
 })
 
