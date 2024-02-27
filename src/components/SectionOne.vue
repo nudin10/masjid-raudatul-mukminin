@@ -1,7 +1,7 @@
 <template>
     <div id="pengenalan"
         class="bg-default-img bg-cover bg-center min-h-screen min-w-full max-h-screen-xl max-w-screen-xl font-default text-black pt-20 px-14">
-        <div class="mt-10 w-1/3 h-[40em] flex flex-row align-middle">
+        <div class="mt-6 w-1/3 h-[37em] flex flex-row align-middle">
             <div class="h-full w-full bg-white-translucent rounded-xl">
                 <div class="h-[20em] p-12">
                     <div class="h-3/6 m-auto flex flex-col items-center pb-6">
