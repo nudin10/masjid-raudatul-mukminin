@@ -1,5 +1,7 @@
 <template>
-  <fwb-carousel :pictures="pictures" slide no-controls no-indicators :slide-interval="tick" animation />
+  <div>
+    <fwb-carousel :pictures="pictures" slide no-controls no-indicators :slide-interval="tick" animation />
+  </div>
   <div class="w-full text-center">
     <p class="text-white font-arabic text-3xl w-full mt-6">
       {{ caption }}

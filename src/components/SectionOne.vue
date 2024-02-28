@@ -43,7 +43,7 @@ let ayatData = ref({
 onMounted(
     async () => {
         try {
-            fetchRetry(arabic, 100, 3).then(res => res.json()).then(data => {
+            fetchRetry(arabic, 100, 1).then(res => res.json()).then(data => {
                 ayatData.value.text.arabic = data.data.text
                 ayatData.value.metadata.surahName = data.data.surah.name
                 ayatData.value.metadata.surahNameEng = data.data.surah.englishName

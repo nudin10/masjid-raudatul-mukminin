@@ -1,6 +1,6 @@
 <template>
     <header :class="{ 'nav-show': !hideNav, 'nav-hidden': hideNav }" ref="targetObserve"
-        class="fixed top-0 left-0 w-full h-20 px-12 backdrop-blur-sm shadow-sm">
+        class="fixed top-0 left-0 w-full h-20 px-12 backdrop-blur-sm shadow-sm z-50">
         <Nav />
     </header>
 </template>
